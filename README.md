@@ -50,8 +50,6 @@ kotlin-appium-cucumber/
 │   │   └── utils/
 │   │       └── extensions.kt     # Utility functions
 │   └── resources/
-│       ├── apps/
-│       │   └── RideYR.app/      # iOS app bundle for testing
 │       └── features/
 │           └── homescreennavigation.feature # BDD scenarios
 ```
