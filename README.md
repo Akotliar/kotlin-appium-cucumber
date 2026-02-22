@@ -17,6 +17,12 @@ This project serves as a **reference implementation** demonstrating best practic
 - **AssertJ** - Fluent assertions library
 - **Gradle** - Build and dependency management
 
+## 🎬 Demo
+
+![Kotlin Appium Cucumber Demo](assets/kotlin_appium_demo.gif)
+
+*Example of automated mobile testing using Kotlin + Appium + Cucumber for the RideYR application*
+
 ## 📋 Technologies Demonstrated
 
 This demo implementation showcases the integration of:
