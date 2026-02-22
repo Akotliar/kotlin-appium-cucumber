@@ -39,11 +39,13 @@ class HomeScreenSteps {
         screen.serviceListContainer.waitForElementToBeVisible() { "Service alerts list did not become visible within the expected time." }
         val alertItems = screen.getServiceAlertItems()
         assert(alertItems.isNotEmpty()) { "Expected at least one active service alert, but found none."}
+    }
+
+    @When("I select an active service alert")
+    fun iSelectActiveServiceAlert() {
+        screen.clickServiceAlertsTab()
+        val alertItems = screen.getServiceAlertItems()
         val randomAlert = alertItems.random()
         randomAlert.click()
-
-        val alertModal = ServiceAlertsModalScreen(DriverFactory.driver)
-        alertModal.isServiceAlertsModalVisible()
-        alertModal.isAlertEffectLabelVisible()
     }
 }

@@ -14,4 +14,5 @@ Feature: HomeScreen functionality / navigation
 
   Scenario: Homescreen view Service Alerts
     When I select Service Alerts tab
-    Then I should be able to view an active service alerts
+    And I select an active service alert
+    Then I should see the selected service alert details
