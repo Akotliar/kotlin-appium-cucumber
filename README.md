@@ -61,18 +61,6 @@ kotlin-appium-cucumber/
 ```
 
 
-## 🔧 Implementation Patterns & Considerations
-
-This demo addresses common mobile automation challenges:
-
-### Cross-Platform Element Location
-```kotlin
-// Demonstrates platform-specific element selectors
-@AndroidFindBy(id = "search_input")
-@iOSXCUITFindBy(accessibility = "searchInput")
-private lateinit var searchInput: WebElement
-```
-
 
 ## 🤝 Using This Demo
 
