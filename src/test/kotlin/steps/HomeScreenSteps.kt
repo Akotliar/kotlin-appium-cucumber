@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import pages.HomeScreen
-import pages.ServiceAlertsModalScreen
 import pages.StopTimesScreen
 import utils.waitForElementToBeVisible
 
@@ -28,23 +27,12 @@ class HomeScreenSteps {
         stopTimeScreen.stopTimeTitleContains(stopCode)
     }
 
-    @When("I select Service Alerts tab")
-    fun iSelectServiceAlertsTab() {
-        screen.clickServiceAlertsTab()
-    }
-
-    @Then("I should be able to view an active service alerts")
-    fun iShouldBeAbleToViewActiveServiceAlerts() {
-        screen.isServiceAlertsCountVisible()
-        screen.serviceListContainer.waitForElementToBeVisible() { "Service alerts list did not become visible within the expected time." }
-        val alertItems = screen.getServiceAlertItems()
-        assert(alertItems.isNotEmpty()) { "Expected at least one active service alert, but found none."}
-    }
-
     @When("I select an active service alert")
     fun iSelectActiveServiceAlert() {
         screen.clickServiceAlertsTab()
+        screen.serviceListContainer.waitForElementToBeVisible { "service list container notvisible" }
         val alertItems = screen.getServiceAlertItems()
+        assert(alertItems.isNotEmpty()) { "Expected at least one active service alert, but found none."}
         val randomAlert = alertItems.random()
         randomAlert.click()
     }

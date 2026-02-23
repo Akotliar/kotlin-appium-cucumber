@@ -63,6 +63,12 @@ class HomeScreen(driver: AppiumDriver) : BaseScreen(driver) {
     }
 
     fun getServiceAlertItems() : List<WebElement> {
-        return serviceListContainer.findElements(By.xpath(".//*[contains(@content-desc, alert_item_)]"))
+        return if (platform == "android") {
+            driver.findElements( AppiumBy.androidUIAutomator(
+                "new UiSelector().resourceIdMatches(\".*alert_item_.*\")"
+            ))
+        } else {
+            driver.findElements(AppiumBy.iOSNsPredicateString("name CONTAINS 'alert_item_'"));
+        }
     }
 }

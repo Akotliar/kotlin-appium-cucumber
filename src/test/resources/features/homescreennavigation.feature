@@ -7,12 +7,11 @@ Feature: HomeScreen functionality / navigation
     When I search for the "<stop_code>" stop code in the search input field
     Then I should see the stop time screen for the stop at the stop number "<stop_code>"
     Examples:
-        | stop_code |
-        | 1234      |
-        | 2700      |
-        | 5678      |
+      | stop_code |
+      | 1234      |
+      | 2700      |
+      | 5678      |
 
   Scenario: Homescreen view Service Alerts
-    When I select Service Alerts tab
-    And I select an active service alert
+    When I select an active service alert
     Then I should see the selected service alert details

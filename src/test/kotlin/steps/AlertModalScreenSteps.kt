@@ -12,7 +12,7 @@ import utils.waitForElementToBeVisible
 class ServiceAlertModalSteps {
     private val screen = ServiceAlertsModalScreen(DriverFactory.driver)
 
-    @Then("I see the selected service alert details")
+    @Then("I should see the selected service alert details")
     fun iSelectActiveServiceAlert() {
         screen.isServiceAlertsModalVisible()
         screen.isAlertEffectLabelVisible()
